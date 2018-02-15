@@ -47,7 +47,19 @@ void testInsert() {
 
 // return difference in the largest and smallest elements in the array  
 int maxDiff(const Array<int> & data) {
-	return 0;
+	int min = data[0];
+	int max = data[0];
+
+	for (int i = 1; i < data.length(); i++) {
+		if (data[i] < min) {
+			min = data[i];
+		}
+		if (data[i] > max) {
+			max = data[i];
+		}
+	}
+	cout << (max - min) << endl;
+	return (max - min);
 }
 // Compare performance of selection/insertion sort.
 void testBoth() {
@@ -65,10 +77,18 @@ int main() {
 	//initialise the random number generator (used in fillRandom())
 	srand((unsigned)time(NULL));
 
+	Array<int> a(5);
+    a[0] = 1;
+	a[1] = 2;
+	a[2] = 3;
+	a[3] = 4;
+	a[4] = 5;
+
 	// call test methods here
 	testInsert();
 	testSelect();
 
+	maxDiff(a);
 	// ---------------------------------------------------
 	cout << endl << "Press enter to quit";
 	cin.get();
