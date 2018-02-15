@@ -24,15 +24,24 @@ void fillRandom(Array<int> & data, int range=100) {
 void testSelect() {
 	Array<int> intArray(20);
 	fillRandom(intArray, 100);
+
 	cout << "Unsorted data: " << intArray << endl;
+
+	selectionSort(intArray);
+
+	cout << "Sorted data: " << intArray << endl;
 }
 
 // test insertion sort
 void testInsert() {
 	Array<int> intArray(20);
 	fillRandom(intArray, 100);
+
 	cout << "Unsorted data: " << intArray << endl;
 
+	insertionSort(intArray);
+
+	cout << "Sorted data: " << intArray << endl;
 }
 
 
@@ -57,7 +66,8 @@ int main() {
 	srand((unsigned)time(NULL));
 
 	// call test methods here
-
+	testInsert();
+	testSelect();
 
 	// ---------------------------------------------------
 	cout << endl << "Press enter to quit";
