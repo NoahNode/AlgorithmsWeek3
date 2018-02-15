@@ -17,10 +17,13 @@
 template <class T>
 void selectionSort(Array<T> & elements) {
 	int min;
+	int movements = 0;
+	int comparisons = 0;
 
 	for (int marker = 0; marker < elements.length() - 1; marker++) {
 		min = marker;
 		for (int i = marker + 1; i < elements.length(); i++) {
+			comparisons++;
 			if (elements[i] < elements[min]) {
 				min = i;
 			}
@@ -32,7 +35,10 @@ void selectionSort(Array<T> & elements) {
 		elements[min] = tmp;*/
 
 		std::swap(elements[min], elements[marker]);
+		movements += 3;
 	}
+
+	std::cout << "Selection sort:  Moves: " << movements << "   Comparisons: " << comparisons << endl;
 
 }
 
@@ -40,15 +46,22 @@ void selectionSort(Array<T> & elements) {
 template <class T>
 void insertionSort(Array<T> & elements) {
 	int in, out, temp;
+	int movements = 0; 
+	int comparisons = 0;
+
 	for (out = 1; out < elements.length(); out++) {
-		temp = elements[out];
+		temp = elements[out]; movements++;
 		// find position for temp
+		comparisons++;
 		for (in = out; in > 0 && elements[in - 1] >= temp; in--) {
-			elements[in] = elements[in - 1];
+			elements[in] = elements[in - 1]; movements++;
+			comparisons++;
 		}
 		// place temp in new position
-		elements[in] = temp;
+		elements[in] = temp; movements++;
 	}
+	std::cout << "Insertion sort:  Moves: " << movements << "   Comparisons: " << comparisons << endl;
+
 }
 
 template <class T>

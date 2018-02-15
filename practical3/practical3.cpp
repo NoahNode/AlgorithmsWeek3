@@ -22,7 +22,7 @@ void fillRandom(Array<int> & data, int range=100) {
 
 // test selection sort
 void testSelect() {
-	Array<int> intArray(20);
+	Array<int> intArray(10);
 	fillRandom(intArray, 100);
 
 	cout << "Unsorted data: " << intArray << endl;
@@ -34,7 +34,7 @@ void testSelect() {
 
 // test insertion sort
 void testInsert() {
-	Array<int> intArray(20);
+	Array<int> intArray(10);
 	fillRandom(intArray, 100);
 
 	cout << "Unsorted data: " << intArray << endl;
