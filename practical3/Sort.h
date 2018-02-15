@@ -27,9 +27,11 @@ void selectionSort(Array<T> & elements) {
 		}
 
 		// swap elements at position min and out
-		T tmp = elements[marker];
+		/*T tmp = elements[marker];
 		elements[marker] = elements[min];
-		elements[min] = tmp;
+		elements[min] = tmp;*/
+
+		std::swap(elements[min], elements[marker]);
 	}
 
 }
@@ -47,6 +49,15 @@ void insertionSort(Array<T> & elements) {
 		// place temp in new position
 		elements[in] = temp;
 	}
+}
+
+template <class T>
+void swap(T & a, T & b) {
+
+	T temp = a;
+	a = b;
+	b = temp;
+
 }
 
 #endif
